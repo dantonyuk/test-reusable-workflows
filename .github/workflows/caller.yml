@@ -1,0 +1,17 @@
+name: Caller
+
+on:
+  push:
+
+  workflow_dispatch:
+    inputs:
+      param:
+        description: Some parameter
+        required: true
+        type: string
+
+jobs:
+  caller-job:
+    uses: dantonyuk/test-reusable-workflows/.github/workflows/callee.yml@master
+    with:
+      param: ${{ github.event.inputs.param }}

@@ -1,0 +1,20 @@
+name: Callee
+
+on:
+  workflow_call:
+    with:
+      param:
+        type: string
+        default: nothing
+        required: false
+
+permissions:
+  pull-requests: write
+
+jobs:
+  callee-job:
+    name: Callee Job
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo ${{ toJson(github) }}
