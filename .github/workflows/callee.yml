@@ -8,9 +8,6 @@ on:
         default: nothing
         required: false
 
-permissions:
-  pull-requests: write
-
 jobs:
   callee-job:
     name: Callee Job
