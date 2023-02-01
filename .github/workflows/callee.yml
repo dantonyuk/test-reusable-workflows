@@ -15,4 +15,4 @@ jobs:
     steps:
       - run: |
           echo "PARAM=${{ inputs.param }}"
-          echo ${{ toJson(github) }}
+          echo '${{ toJson(github) }}'
