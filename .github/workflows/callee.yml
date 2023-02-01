@@ -2,7 +2,7 @@ name: Callee
 
 on:
   workflow_call:
-    with:
+    inputs:
       param:
         type: string
         default: nothing
@@ -17,4 +17,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
+          echo "PARAM=${{ inputs.param }}"
           echo ${{ toJson(github) }}
